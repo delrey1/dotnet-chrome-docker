@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:3.1-focal
+FROM mcr.microsoft.com/dotnet/sdk:3.1-focal
 WORKDIR /app
 
 RUN apt update && apt install -y  \
