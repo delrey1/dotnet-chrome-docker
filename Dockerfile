@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:3.1-focal
+FROM mcr.microsoft.com/dotnet/sdk:5.0
 WORKDIR /app
 
 RUN apt update && apt install -y  \
@@ -21,4 +21,4 @@ RUN apt update && apt install -y  \
 google-chrome-stable \
 --no-install-recommends \
 && apt-get purge --auto-remove -y curl \
-&& rm -rf /var/lib/apt/lists/* 
+&& rm -rf /var/lib/apt/lists/*

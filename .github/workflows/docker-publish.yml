@@ -7,11 +7,13 @@ name: Docker
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "dotnetsdk5" ]
     # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+    tags: |
+      # dynamically set the branch name as a prefix
+      type=sha,prefix={{branch}}-
+      # dynamically set the branch name and sha as a custom tag
+      type=raw,value=mytag-{{branch}}-{{sha}}
 
 env:
   # Use docker.io for Docker Hub if empty
